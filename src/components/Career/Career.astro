@@ -1,0 +1,122 @@
+---
+import Section from '@components/shared/Section.astro'
+import Certification from '@components/shared/icons/Certification.astro'
+import Briefcase from '@components/shared/icons/Briefcase.astro'
+import CareerCard from './CareerCard.astro'
+import { ICONS_MAP } from '../shared/constants'
+
+const CAREER = [
+  {
+    title: 'Senior software developer',
+    subtitle: '2021 - 2024 | Scopely',
+    icon: Briefcase,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.redux,
+      ICONS_MAP.typescript,
+      ICONS_MAP.sass,
+      ICONS_MAP.jest,
+      ICONS_MAP.cypress,
+      ICONS_MAP.webpack,
+      ICONS_MAP.swc,
+      ICONS_MAP.figma
+    ]
+  },
+  {
+    title: 'Senior software developer',
+    subtitle: '2021 | Chessable',
+    icon: Briefcase,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.typescript,
+      ICONS_MAP.php,
+      ICONS_MAP.sass,
+      ICONS_MAP.jest,
+      ICONS_MAP.webpack
+    ]
+  },
+  {
+    title: 'Senior software developer',
+    subtitle: '2019 - 2021 | NTT Data',
+    icon: Briefcase,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.redux,
+      ICONS_MAP.nodeJS,
+      ICONS_MAP.typescript,
+      ICONS_MAP.sass,
+      ICONS_MAP.jest,
+      ICONS_MAP.cypress,
+      ICONS_MAP.webpack,
+      ICONS_MAP.figma
+    ]
+  },
+  {
+    title: 'Fullstack developer',
+    subtitle: '2019 | Marfeel',
+    icon: Briefcase,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [
+      ICONS_MAP.vue,
+      ICONS_MAP.typescript,
+      ICONS_MAP.php,
+      ICONS_MAP.sass,
+      ICONS_MAP.jest,
+      ICONS_MAP.cypress,
+      ICONS_MAP.webpack
+    ]
+  },
+  {
+    title: 'Mobile Web Specialist',
+    subtitle: '2017 - 2018 | Google',
+    icon: Certification,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [ICONS_MAP.html, ICONS_MAP.css, ICONS_MAP.javascript]
+  },
+  {
+    title: 'Fullstack developer',
+    subtitle: '2014 - 2019 | Special Tours',
+    icon: Briefcase,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [
+      ICONS_MAP.angular,
+      ICONS_MAP.typescript,
+      ICONS_MAP.ionic,
+      ICONS_MAP.php,
+      ICONS_MAP.sass,
+      ICONS_MAP.jest,
+      ICONS_MAP.webpack
+    ]
+  },
+  {
+    title: 'Fullstack developer',
+    subtitle: '2013 - 2014 | TLS Group',
+    icon: Briefcase,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam',
+    badges: [ICONS_MAP.html, ICONS_MAP.css, ICONS_MAP.javascript, ICONS_MAP.php]
+  },
+  {
+    title: 'BSc in Telecom. Engineering',
+    subtitle: '2006 - 2010 | Málaga School of Telecom. Engineering',
+    icon: Certification,
+    description:
+      'sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quamelementum pulvinar etiam'
+  }
+]
+---
+
+<Section title="Career and qualifications">
+  <div class="mx-auto grid max-w-[1120px] gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {CAREER.map((career) => <CareerCard career={career} />)}
+  </div>
+</Section>

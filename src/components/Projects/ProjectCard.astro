@@ -1,0 +1,25 @@
+---
+import type { Project } from './Projects.astro'
+import AnchorWrapper from './AnchorWrapper.astro'
+import ProjectCardContent from './ProjectCardContent.astro'
+
+export interface Layout {
+  backgroundColor?: string
+}
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+
+{
+  project.link ? (
+    <AnchorWrapper href={project.link}>
+      <ProjectCardContent project={project} />
+    </AnchorWrapper>
+  ) : (
+    <ProjectCardContent project={project} />
+  )
+}

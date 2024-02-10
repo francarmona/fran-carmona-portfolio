@@ -1,0 +1,10 @@
+---
+interface Props {
+  class?: string
+  src: string
+}
+
+const { class: className, src } = Astro.props
+---
+
+<img class:list={['max-w-none rounded-t-md shadow-2xl', className]} src={src} />

@@ -1,0 +1,22 @@
+---
+interface Props {
+  url: string
+  hoverTextColor?: string
+  darkHoverTextColor?: string
+}
+
+const { url, hoverTextColor = 'text-gray-400', darkHoverTextColor = 'text-gray-300' } = Astro.props
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={{
+    [`hover:${hoverTextColor}`]: hoverTextColor,
+    [`dark:hover:${darkHoverTextColor}`]: darkHoverTextColor
+  }}
+  class="cursor-pointer text-gray-500 transition-colors duration-300 ease-in-out dark:text-gray-400"
+>
+  <slot />
+</a>

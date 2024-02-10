@@ -1,0 +1,28 @@
+---
+import Marfeel from '@components/shared/icons/Marfeel.astro'
+import NTTData from '@components/shared/icons/NTTData.astro'
+import Scopely from '@components/shared/icons/Scopely.astro'
+import Section from '@components/shared/Section.astro'
+import Google from '@components/shared/icons/Google.astro'
+import Chessable from '@components/shared/icons/Chessable.astro'
+
+const COMPANIES = [
+  { icon: Scopely, class: 'w-24', url: 'https://www.scopely.com' },
+  { icon: Chessable, class: 'w-28', url: 'https://www.chessable.com' },
+  { icon: NTTData, class: 'w-28', url: 'https://www.nttdata.com' },
+  { icon: Marfeel, class: 'w-32', url: 'https://www.marfeel.com' },
+  { icon: Google, class: 'w-24', url: 'http://google.com' }
+]
+---
+
+<Section class="bg-gray-50 py-14 dark:bg-transparent md:py-16">
+  <div class="flex items-center justify-center gap-x-28 text-gray-500 dark:text-gray-400">
+    {
+      COMPANIES.map(({ icon: Icon, class: className, url }) => (
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <Icon class:list={['hover:text-gray-900 dark:text-white/90', className]} />
+        </a>
+      ))
+    }
+  </div>
+</Section>

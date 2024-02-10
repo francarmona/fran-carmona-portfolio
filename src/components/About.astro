@@ -1,0 +1,55 @@
+---
+import LocationPin from '@components/shared/icons/LocationPin.astro'
+---
+
+<section class="container grid max-w-screen-xl grid-cols-12 py-20">
+  <div class="col-span-7">
+    <p class="mb-6 text-2xl text-gray-600 dark:text-gray-400">
+      Hey, I'm Fran <span class="wave">👋</span>
+    </p>
+    <h1 class="text-4xl font-extrabold dark:text-white/85">
+      Fullstack developer based in Barcelona ☀️
+    </h1>
+    <p class="mt-6 text-2xl text-gray-600 dark:text-gray-400">
+      Building tomorrow's web today. <br />Crafting seamless and intuitive user experiences and
+      having fun in the process.
+    </p>
+  </div>
+  <div class="col-span-5">Picture</div>
+</section>
+<style>
+  .wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: 2;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+</style>

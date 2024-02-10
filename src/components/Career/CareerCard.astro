@@ -1,0 +1,42 @@
+---
+import Badge from '@components/shared/Badge.astro'
+
+interface Badge {
+  name: string
+  icon: any
+}
+
+interface Props {
+  career: { title: string; subtitle: string; icon: any; description: string; badges?: Badge[] }
+}
+
+const { title, subtitle, icon: Icon, description, badges = [] } = Astro.props.career
+---
+
+<div class="flex flex-col rounded border bg-white p-4 shadow-sm">
+  <div class="flex items-center gap-5">
+    <div
+      class="flex h-10 w-10 flex-none items-center justify-center self-baseline rounded border border-blue-200 bg-blue-50 text-blue-500"
+    >
+      <Icon class="h-6 w-6" />
+    </div>
+    <div>
+      <div class="text-xl font-semibold">{title}</div>
+      <div class="font-light">{subtitle}</div>
+    </div>
+  </div>
+  <hr class="mt-3.5" />
+  <p class="mb-5 mt-3.5 flex-grow text-gray-600">
+    {description}
+  </p>
+  <div class="flex flex-wrap gap-1">
+    {
+      badges.map(({ name, icon: Icon }) => (
+        <Badge>
+          <Icon class="h3 w-3" />
+          {name}
+        </Badge>
+      ))
+    }
+  </div>
+</div>

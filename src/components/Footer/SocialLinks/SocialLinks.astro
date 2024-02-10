@@ -1,0 +1,34 @@
+---
+import SocialLink from './SocialLink.astro'
+import LinkedinIcon from '@components/shared/icons/Linkedin.astro'
+import GithubIcon from '@components/shared/icons/Github.astro'
+import TwitterIcon from '@components/shared/icons/Twitter.astro'
+
+const SOCIAL_LINKS: { url: string; hoverTextColor?: string; icon: any }[] = [
+  {
+    url: 'https://www.linkedin.com/in/fran-carmona',
+    hoverTextColor: 'text-blue-600',
+    icon: LinkedinIcon
+  },
+  {
+    url: 'https://github.com/francarmona',
+    icon: GithubIcon
+  },
+  {
+    url: 'https://twitter.com/frncar',
+    icon: TwitterIcon
+  }
+]
+---
+
+<ul class="flex gap-4">
+  {
+    SOCIAL_LINKS.map(({ url, hoverTextColor, icon: Icon }) => (
+      <li>
+        <SocialLink url={url} hoverTextColor={hoverTextColor}>
+          <Icon />
+        </SocialLink>
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,154 @@
+---
+import Section from '@components/shared/Section.astro'
+import ProjectCard, { type Layout } from './ProjectCard.astro'
+import { ICONS_MAP } from '../shared/constants'
+
+export interface Image {
+  url: string
+  class?: string
+}
+
+export interface Project {
+  title: string
+  description: string
+  image: Image
+  company: string
+  link: string
+  layout?: Layout
+  badges?: any[]
+}
+
+const PROJECTS: Project[] = [
+  {
+    title: 'Classroom',
+    description: 'Ultimate tool for live chess instruction',
+    image: { url: './classroom.webp', class: 'w-[510px]' },
+    company: 'Chessable',
+    link: 'https://www.chessable.com/getclassroom/',
+    layout: { backgroundColor: '#1882C4' },
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.redux,
+      ICONS_MAP.typescript,
+      ICONS_MAP.php,
+      ICONS_MAP.sass,
+      ICONS_MAP.webpack,
+      ICONS_MAP.jest
+    ]
+  },
+  {
+    title: 'Cupra configurator',
+    description: 'Vehicle customization platform for car shoppers',
+    image: { url: './car-configurator-seat.webp', class: 'w-[570px]' },
+    company: 'NTT Data',
+    link: 'https://www.cupraofficial.es/configurador',
+    layout: {
+      backgroundColor: '#555c63'
+    },
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.typescript,
+      ICONS_MAP.nodeJS,
+      ICONS_MAP.sass,
+      ICONS_MAP.jest,
+      ICONS_MAP.figma
+    ]
+  },
+  {
+    title: 'Playgami console',
+    description: 'SaaS platform for game publishers',
+    image: {
+      url: './playgami-console.webp',
+      class: 'w-[570px] border-l-[3px] border-[#090E1B]'
+    },
+    company: 'Scopely',
+    link: 'https://console.playgami.scopely.com',
+    layout: {
+      backgroundColor: '#9563FE'
+    },
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.redux,
+      ICONS_MAP.typescript,
+      ICONS_MAP.cypress,
+      ICONS_MAP.jest,
+      ICONS_MAP.sass,
+      ICONS_MAP.figma
+    ]
+  },
+  {
+    title: 'Player Journey',
+    description: 'Channel orchestration tool for player communications',
+    image: {
+      url: './player-journey.webp',
+      class: 'w-[540px] shadow-none'
+    },
+    company: 'Scopely',
+    link: '',
+    layout: {
+      backgroundColor: '#3cb69e'
+    },
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.redux,
+      ICONS_MAP.typescript,
+      ICONS_MAP.cypress,
+      ICONS_MAP.jest,
+      ICONS_MAP.sass,
+      ICONS_MAP.figma
+    ]
+  },
+  {
+    title: 'In-app Visual Composer',
+    description: 'Code-free in-app message editor',
+    image: {
+      url: './visual-editor.webp',
+      class: 'w-[480px]'
+    },
+    company: 'Scopely',
+    link: '',
+    layout: {
+      backgroundColor: '#ff7753'
+    },
+    badges: [
+      ICONS_MAP.react,
+      ICONS_MAP.redux,
+      ICONS_MAP.typescript,
+      ICONS_MAP.cypress,
+      ICONS_MAP.jest,
+      ICONS_MAP.sass,
+      ICONS_MAP.figma
+    ]
+  },
+  {
+    title: 'Travel Apps',
+    description: 'Smart travel apps for travel operators',
+    image: {
+      url: './special-tours-apps.webp',
+      class: 'w-[480px] -ml-8 shadow-none'
+    },
+    company: 'Special Tours',
+    link: '',
+    layout: {
+      backgroundColor: '#ffb543'
+    },
+    badges: [ICONS_MAP.ionic, ICONS_MAP.angular, ICONS_MAP.typescript, ICONS_MAP.php]
+  }
+]
+---
+
+<Section
+  title="Projects"
+  description="Featured works (Websites, Apps, SaaS solutions)"
+  class="bg-gray-50"
+>
+  <div class="mx-auto max-w-screen-lg columns-1 gap-9 sm:columns-2">
+    {
+      PROJECTS.map((project) => (
+        <div class="bottom mb-9">
+          <ProjectCard project={project} />
+        </div>
+      ))
+    }
+  </div>
+</Section>
