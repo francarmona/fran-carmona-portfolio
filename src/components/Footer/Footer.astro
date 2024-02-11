@@ -3,15 +3,21 @@ import SocialLinks from './SocialLinks/SocialLinks.astro'
 ---
 
 <footer class="h-16 border-t border-slate-300/30">
-  <div class="container flex flex-col items-center justify-between gap-y-6 py-8 sm:flex-row">
+  <div
+    class="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-y-6 py-8 sm:flex-row"
+  >
     <p class="text-sm text-gray-500 dark:text-gray-400">
       2024 Fran Carmona. Build with <a
         href="https://astro.build/"
         rel="noopener noreferrer"
-        target="_blank">Astro 🚀</a
-      > and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"
-        >TailwindCSS 🧑‍🎨</a
-      >.
+        class="hover:underline"
+        target="_blank">Astro</a
+      > 🚀 and <a
+        href="https://tailwindcss.com/"
+        class="hover:underline"
+        target="_blank"
+        rel="noopener noreferrer">TailwindCSS</a
+      > 🧑‍🎨.
     </p>
     <SocialLinks />
   </div>

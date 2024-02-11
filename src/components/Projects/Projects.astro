@@ -1,7 +1,10 @@
 ---
-import Section from '@components/shared/Section.astro'
+import Section from '@components/shared/Section/Section.astro'
+import { ICONS_MAP } from '@components/shared/constants'
+import SectionTitle from '@components/shared/Section/SectionTitle.astro'
+import SectionDescription from '@components/shared/Section/SectionDescription.astro'
+import SectionBody from '@components/shared/Section/SectionBody.astro'
 import ProjectCard, { type Layout } from './ProjectCard.astro'
-import { ICONS_MAP } from '../shared/constants'
 
 export interface Image {
   url: string
@@ -39,11 +42,11 @@ const PROJECTS: Project[] = [
   {
     title: 'Cupra configurator',
     description: 'Vehicle customization platform for car shoppers',
-    image: { url: './car-configurator-seat.webp', class: 'w-[570px]' },
+    image: { url: './car-configurator-seat.webp', class: 'w-[555px]' },
     company: 'NTT Data',
     link: 'https://www.cupraofficial.es/configurador',
     layout: {
-      backgroundColor: '#555c63'
+      backgroundColor: '#404346'
     },
     badges: [
       ICONS_MAP.react,
@@ -81,7 +84,7 @@ const PROJECTS: Project[] = [
     description: 'Channel orchestration tool for player communications',
     image: {
       url: './player-journey.webp',
-      class: 'w-[540px] shadow-none'
+      class: 'w-[540px] shadow-none -mb-3'
     },
     company: 'Scopely',
     link: '',
@@ -125,30 +128,30 @@ const PROJECTS: Project[] = [
     description: 'Smart travel apps for travel operators',
     image: {
       url: './special-tours-apps.webp',
-      class: 'w-[480px] -ml-8 shadow-none'
+      class: 'w-[480px] shadow-none'
     },
     company: 'Special Tours',
     link: '',
     layout: {
-      backgroundColor: '#ffb543'
+      backgroundColor: '#f99b1c'
     },
     badges: [ICONS_MAP.ionic, ICONS_MAP.angular, ICONS_MAP.typescript, ICONS_MAP.php]
   }
 ]
 ---
 
-<Section
-  title="Projects"
-  description="Featured works (Websites, Apps, SaaS solutions)"
-  class="bg-gray-50"
->
-  <div class="mx-auto max-w-screen-lg columns-1 gap-9 sm:columns-2">
-    {
-      PROJECTS.map((project) => (
-        <div class="bottom mb-9">
-          <ProjectCard project={project} />
-        </div>
-      ))
-    }
-  </div>
+<Section class="bg-gray-50">
+  <SectionTitle> Projects </SectionTitle>
+  <SectionDescription>Featured works (Websites, Apps, SaaS solutions)</SectionDescription>
+  <SectionBody>
+    <div class="mx-auto max-w-screen-xl columns-1 gap-9 lg:columns-2">
+      {
+        PROJECTS.map((project) => (
+          <div class="bottom mb-9">
+            <ProjectCard project={project} />
+          </div>
+        ))
+      }
+    </div>
+  </SectionBody>
 </Section>

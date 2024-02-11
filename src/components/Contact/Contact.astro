@@ -1,0 +1,25 @@
+---
+import Section from '@components/shared/Section/Section.astro'
+import SectionTitle from '@components/shared/Section/SectionTitle.astro'
+import SectionBody from '@components/shared/Section/SectionBody.astro'
+import RadarPing from './RadarPing.astro'
+import ContactForm from './ContactForm.svelte'
+---
+
+<Section class="bg-gray-50 dark:bg-transparent">
+  <div class="mx-auto max-w-screen-md">
+    <SectionTitle>Looking for a developer?</SectionTitle>
+    <div class="mt-3 flex items-center justify-center gap-3">
+      <RadarPing />
+      <h3 class="inline-block text-xl font-light tracking-wide text-blue-600 dark:text-blue-500">
+        I'm currently available for work.
+      </h3>
+    </div>
+    <p class="mt-10 text-center text-xl font-light text-gray-500 dark:text-gray-400">
+      Any question? Or just wanna say hello? <br /> Drop me a message!
+    </p>
+    <SectionBody>
+      <ContactForm client:only="svelte" />
+    </SectionBody>
+  </div>
+</Section>

@@ -1,7 +1,9 @@
 ---
-import Section from '@components/shared/Section.astro'
+import Section from '@components/shared/Section/Section.astro'
+import { ICONS_MAP } from '@components/shared/constants'
+import SectionTitle from '@components/shared/Section/SectionTitle.astro'
+import SectionBody from '@components/shared/Section/SectionBody.astro'
 import SkillCard from './SkillCard.astro'
-import { ICONS_MAP } from '../shared/constants'
 
 const SKILLS: { name: string; icon: any; iconClass?: string }[] = [
   ICONS_MAP.react,
@@ -27,14 +29,17 @@ const SKILLS: { name: string; icon: any; iconClass?: string }[] = [
 ]
 ---
 
-<Section title="Skills & Tools">
-  <div class="skills mx-auto max-w-screen-lg gap-5">
-    {
-      SKILLS.map(({ name, icon, iconClass }) => (
-        <SkillCard name={name} icon={icon} iconClass={iconClass} />
-      ))
-    }
-  </div>
+<Section class="mx-auto max-w-screen-xl">
+  <SectionTitle>Skills & Tools</SectionTitle>
+  <SectionBody>
+    <div class="skills gap-5">
+      {
+        SKILLS.map(({ name, icon, iconClass }) => (
+          <SkillCard name={name} icon={icon} iconClass={iconClass} />
+        ))
+      }
+    </div>
+  </SectionBody>
 </Section>
 
 <style>

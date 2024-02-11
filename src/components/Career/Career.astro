@@ -1,9 +1,11 @@
 ---
-import Section from '@components/shared/Section.astro'
+import Section from '@components/shared/Section/Section.astro'
+import SectionTitle from '@components/shared/Section/SectionTitle.astro'
 import Certification from '@components/shared/icons/Certification.astro'
 import Briefcase from '@components/shared/icons/Briefcase.astro'
+import { ICONS_MAP } from '@components/shared/constants'
+import SectionBody from '@components/shared/Section/SectionBody.astro'
 import CareerCard from './CareerCard.astro'
-import { ICONS_MAP } from '../shared/constants'
 
 const CAREER = [
   {
@@ -115,8 +117,11 @@ const CAREER = [
 ]
 ---
 
-<Section title="Career and qualifications">
-  <div class="mx-auto grid max-w-[1120px] gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {CAREER.map((career) => <CareerCard career={career} />)}
-  </div>
+<Section class="mx-auto max-w-screen-xl">
+  <SectionTitle>Career and qualifications</SectionTitle>
+  <SectionBody>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {CAREER.map((career) => <CareerCard career={career} />)}
+    </div>
+  </SectionBody>
 </Section>
