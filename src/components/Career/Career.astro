@@ -5,6 +5,7 @@ import Certification from '@components/shared/icons/Certification.astro'
 import Briefcase from '@components/shared/icons/Briefcase.astro'
 import { ICONS_MAP } from '@components/shared/constants'
 import SectionBody from '@components/shared/Section/SectionBody.astro'
+import SectionDescription from '@components/shared/Section/SectionDescription.astro'
 import CareerCard from './CareerCard.astro'
 
 const CAREER = [
@@ -119,6 +120,7 @@ const CAREER = [
 
 <Section class="mx-auto max-w-screen-xl px-6" id="career">
   <SectionTitle>Career and qualifications</SectionTitle>
+  <SectionDescription>My professional journey and educational background</SectionDescription>
   <SectionBody>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {CAREER.map((career) => <CareerCard career={career} />)}

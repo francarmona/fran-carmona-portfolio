@@ -3,6 +3,7 @@ import Section from '@components/shared/Section/Section.astro'
 import { ICONS_MAP } from '@components/shared/constants'
 import SectionTitle from '@components/shared/Section/SectionTitle.astro'
 import SectionBody from '@components/shared/Section/SectionBody.astro'
+import SectionDescription from '@components/shared/Section/SectionDescription.astro'
 import SkillCard from './SkillCard.astro'
 
 const SKILLS: { name: string; icon: any; iconClass?: string }[] = [
@@ -31,6 +32,9 @@ const SKILLS: { name: string; icon: any; iconClass?: string }[] = [
 
 <Section class="mx-auto max-w-screen-xl px-6">
   <SectionTitle>Skills & Tools</SectionTitle>
+  <SectionDescription
+    >Languages, frameworks and tools I'm proficient in for web development</SectionDescription
+  >
   <SectionBody>
     <div class="skills gap-5">
       {
