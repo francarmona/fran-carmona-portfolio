@@ -1,9 +1,10 @@
 ---
 interface Props {
   class?: string
+  id?: string
 }
 
-const { class: className } = Astro.props
+const { class: className, id } = Astro.props
 ---
 
 <section
@@ -11,6 +12,7 @@ const { class: className } = Astro.props
     'border-t border-slate-300/30 py-16 dark:bg-transparent sm:py-20 md:py-24',
     className
   ]}
+  id={id}
 >
   <slot />
 </section>

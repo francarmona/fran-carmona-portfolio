@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro'
+import ContactBubble from '@components/shared/icons/ContactBubble.astro'
 ---
 
 <header
@@ -25,6 +26,16 @@ import ThemeToggle from './ThemeToggle.astro'
       </svg>
       <span class="text-xl font-bold">Fran Carmona</span>
     </a>
-    <ThemeToggle />
+
+    <div class="flex items-center gap-4">
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-500 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+      >
+        <ContactBubble class="h-5 w-5" />
+        Contact
+      </a>
+      <ThemeToggle />
+    </div>
   </div>
 </header>
