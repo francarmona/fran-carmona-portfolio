@@ -9,6 +9,7 @@ import ProjectCard, { type Layout } from './ProjectCard.astro'
 export interface Image {
   url: string
   class?: string
+  alt?: string
 }
 
 export interface Project {
@@ -25,7 +26,7 @@ const PROJECTS: Project[] = [
   {
     title: 'Classroom',
     description: 'Ultimate tool for live chess instruction',
-    image: { url: './classroom.webp', class: 'w-[510px]' },
+    image: { url: './classroom.webp', class: 'w-[510px]', alt: 'Chessable classroom' },
     company: 'Chessable',
     link: 'https://www.chessable.com/getclassroom/',
     layout: { backgroundColor: '#1882C4' },
@@ -42,7 +43,11 @@ const PROJECTS: Project[] = [
   {
     title: 'Cupra configurator',
     description: 'Vehicle customization platform for car shoppers',
-    image: { url: './car-configurator-seat.webp', class: 'w-[555px]' },
+    image: {
+      url: './car-configurator-seat.webp',
+      class: 'w-[555px]',
+      alt: 'Cupra car configurator'
+    },
     company: 'NTT Data',
     link: 'https://www.cupraofficial.es/configurador',
     layout: {
@@ -62,7 +67,8 @@ const PROJECTS: Project[] = [
     description: 'SaaS platform for game publishers',
     image: {
       url: './playgami-console.webp',
-      class: 'w-[570px] border-l-[3px] border-[#090E1B]'
+      class: 'w-[570px] border-l-[3px] border-[#090E1B]',
+      alt: 'Playgami console'
     },
     company: 'Scopely',
     link: 'https://console.playgami.scopely.com',
@@ -84,7 +90,8 @@ const PROJECTS: Project[] = [
     description: 'Channel orchestration tool for player communications',
     image: {
       url: './player-journey.webp',
-      class: 'w-[540px] shadow-none -mb-3'
+      class: 'w-[540px] shadow-none -mb-3',
+      alt: 'Scopely Player Journey'
     },
     company: 'Scopely',
     link: '',
@@ -106,7 +113,8 @@ const PROJECTS: Project[] = [
     description: 'Code-free in-app message editor',
     image: {
       url: './visual-editor.webp',
-      class: 'w-[480px]'
+      class: 'w-[480px]',
+      alt: 'Playgami in-app visual editor'
     },
     company: 'Scopely',
     link: '',
@@ -128,7 +136,8 @@ const PROJECTS: Project[] = [
     description: 'Smart travel apps for travel operators',
     image: {
       url: './special-tours-apps.webp',
-      class: 'w-[480px] shadow-none'
+      class: 'w-[480px] shadow-none',
+      alt: 'Travel apps'
     },
     company: 'Special Tours',
     link: '',
