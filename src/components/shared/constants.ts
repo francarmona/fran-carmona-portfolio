@@ -21,6 +21,8 @@ import CSS from '@components/shared/icons/CSS.astro'
 import Figma from '@components/shared/icons/Figma.astro'
 import Angular from '@components/shared/icons/Angular.astro'
 import Javascript from '@components/shared/icons/Javascript.astro'
+import ReactTestingLibrary from '@components/shared/icons/ReactTestingLibrary.astro'
+import MaterialUI from '@components/shared/icons/MaterialUI.astro'
 
 export const ICONS_MAP = {
   react: { name: 'React', icon: React },
@@ -45,5 +47,7 @@ export const ICONS_MAP = {
   docker: { name: 'Docker', icon: Docker },
   figma: { name: 'Figma', icon: Figma },
   angular: { name: 'Angular', icon: Angular },
-  javascript: { name: 'Javascript', icon: Javascript }
+  javascript: { name: 'Javascript', icon: Javascript },
+  reactTestingLibrary: { name: 'RTL', icon: ReactTestingLibrary },
+  materialUI: { name: 'Material UI', icon: MaterialUI }
 }

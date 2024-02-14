@@ -6,16 +6,20 @@ import RadarPing from './RadarPing.astro'
 import ContactForm from './ContactForm.svelte'
 ---
 
-<Section class="bg-gray-50 px-6 dark:bg-transparent" id="contact">
+<Section class="scroll-mt-[62px] px-6" id="contact">
   <div class="mx-auto max-w-screen-md">
     <SectionTitle>Looking for a developer?</SectionTitle>
     <div class="mt-3 flex items-center justify-center gap-3">
       <RadarPing />
-      <h3 class="inline-block text-xl font-light tracking-wide text-blue-600 dark:text-blue-500">
+      <h3
+        class="inline-block text-lg font-light tracking-wide text-blue-600 dark:text-blue-500 sm:text-xl"
+      >
         I'm currently available for work.
       </h3>
     </div>
-    <p class="mt-10 text-center text-xl font-light text-gray-500 dark:text-gray-400">
+    <p
+      class="mt-7 text-center text-lg font-light text-gray-500 dark:text-gray-400 sm:mt-10 sm:text-xl"
+    >
       Any question? Or just wanna say hello? <br /> Drop me a message!
     </p>
     <SectionBody>

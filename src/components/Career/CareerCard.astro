@@ -21,14 +21,12 @@ const { title, subtitle, icon: Icon, description, badges = [] } = Astro.props.ca
       <Icon class="h-6 w-6" />
     </div>
     <div>
-      <div class="text-xl font-semibold">{title}</div>
-      <div class="font-light">{subtitle}</div>
+      <div class="text-xl font-semibold text-gray-800">{title}</div>
+      <div class="font-light text-gray-700">{subtitle}</div>
     </div>
   </div>
   <hr class="mt-3.5 dark:border-t-gray-400" />
-  <p class="mb-5 mt-3.5 flex-grow text-gray-500">
-    {description}
-  </p>
+  <p class="mb-5 mt-3.5 flex-grow font-light text-gray-500" set:html={description} />
   <div class="flex flex-wrap gap-1">
     {
       badges.map(({ name, icon: Icon }) => (

@@ -4,12 +4,12 @@ interface Props {
   icon: any
   iconClass?: string
 }
-const { name, icon: Icon, iconClass = 'h-11 w-11' } = Astro.props
+const { name, icon: Icon, iconClass = 'h-9 w-9 sm:h-11 sm:w-11' } = Astro.props
 ---
 
 <div
-  class="flex h-[120px] w-[120px] flex-col items-center justify-between rounded border bg-white p-4 shadow-sm dark:bg-gray-300"
+  class="flex h-[110px] w-[110px] flex-col items-center justify-between rounded border bg-white p-4 shadow-sm dark:bg-gray-300 sm:h-[120px] sm:w-[120px]"
 >
   <Icon class={iconClass} />
-  <div class="text-sm font-medium">{name}</div>
+  <div class="text-center text-sm font-medium">{name}</div>
 </div>
