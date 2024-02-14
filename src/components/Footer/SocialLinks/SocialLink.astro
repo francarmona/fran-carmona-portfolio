@@ -1,12 +1,13 @@
 ---
 interface Props {
   url: string
+  label: string
   hoverTextColor?: string
   darkHoverTextColor?: string
   class?: string
 }
 
-const { url, class: className } = Astro.props
+const { url, class: className, label } = Astro.props
 ---
 
 <a
@@ -19,4 +20,5 @@ const { url, class: className } = Astro.props
   ]}
 >
   <slot />
+  <span class="sr-only">{label}</span>
 </a>

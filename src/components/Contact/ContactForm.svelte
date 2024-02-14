@@ -110,7 +110,7 @@
   </div>
   <button
     type="submit"
-    class="rounded-lg w-full text-sm bg-blue-500 px-5 py-3 font-medium text-white hover:bg-blue-500/90 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-700"
+    class="rounded-lg w-full text-sm bg-blue-600 px-5 py-3 font-medium text-white hover:bg-blue-600/90 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-700"
     >Send message</button
   >
   <Toaster />
