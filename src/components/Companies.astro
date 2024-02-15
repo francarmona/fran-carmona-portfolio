@@ -1,31 +1,28 @@
 ---
-import Marfeel from '@components/shared/icons/Marfeel.astro'
-import NTTData from '@components/shared/icons/NTTData.astro'
-import Scopely from '@components/shared/icons/Scopely.astro'
 import Section from '@components/shared/Section/Section.astro'
-import Chessable from '@components/shared/icons/Chessable.astro'
+import Icon from '@components/Icon.astro'
 
 const COMPANIES = [
   {
-    icon: Scopely,
+    icon: 'scopely',
     class: 'w-14 sm:w-16',
     url: 'https://www.scopely.com',
     label: 'Scopely company logo'
   },
   {
-    icon: Chessable,
+    icon: 'chessable',
     class: 'w-16 sm:w-20',
     url: 'https://www.chessable.com',
     label: 'Chessable company logo'
   },
   {
-    icon: NTTData,
+    icon: 'ntt-data',
     class: 'w-16 sm:w-20',
     url: 'https://www.nttdata.com',
     label: 'NTTData company logo'
   },
   {
-    icon: Marfeel,
+    icon: 'marfeel',
     class: 'w-20 sm:w-24',
     url: 'https://www.marfeel.com',
     label: 'Marfeel company logo'
@@ -38,9 +35,9 @@ const COMPANIES = [
     class="flex flex-wrap items-center justify-center gap-x-28 gap-y-6 text-gray-500 dark:text-gray-400"
   >
     {
-      COMPANIES.map(({ icon: Icon, class: className, url, label }) => (
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <Icon class:list={['hover:text-gray-900 dark:text-white/90', className]} />
+      COMPANIES.map(({ icon, class: className, url, label }) => (
+        <a href={url} class="inline-flex" target="_blank" rel="noopener noreferrer">
+          <Icon icon={icon} class:list={['hover:text-gray-900 dark:text-white/90', className]} />
           <span class="sr-only">{label}</span>
         </a>
       ))

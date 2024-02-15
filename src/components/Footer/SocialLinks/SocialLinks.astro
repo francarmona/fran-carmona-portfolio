@@ -1,24 +1,22 @@
 ---
 import SocialLink from './SocialLink.astro'
-import LinkedinIcon from '@components/shared/icons/Linkedin.astro'
-import GithubIcon from '@components/shared/icons/Github.astro'
-import TwitterIcon from '@components/shared/icons/Twitter.astro'
+import Icon from '@components/Icon.astro'
 
-const SOCIAL_LINKS: { url: string; class?: string; icon: any; label: string }[] = [
+const SOCIAL_LINKS: { url: string; class?: string; icon: string; label: string }[] = [
   {
     url: 'https://www.linkedin.com/in/fran-carmona',
     class: 'hover:text-blue-500',
-    icon: LinkedinIcon,
+    icon: 'linkedin',
     label: 'Go to Fran Linkedin acccount'
   },
   {
     url: 'https://github.com/francarmona',
-    icon: GithubIcon,
+    icon: 'github',
     label: 'Go to Fran Github acccount'
   },
   {
     url: 'https://twitter.com/frncar',
-    icon: TwitterIcon,
+    icon: 'twitter',
     label: 'Go to Fran Twitter acccount'
   }
 ]
@@ -26,10 +24,10 @@ const SOCIAL_LINKS: { url: string; class?: string; icon: any; label: string }[] 
 
 <ul class="flex gap-4">
   {
-    SOCIAL_LINKS.map(({ url, class: className, icon: Icon, label }) => (
+    SOCIAL_LINKS.map(({ url, class: className, icon, label }) => (
       <li>
-        <SocialLink url={url} label={label} class={className}>
-          <Icon />
+        <SocialLink url={url} label={label}>
+          <Icon icon={icon} class:list={['h-5 w-5', className]} />
         </SocialLink>
       </li>
     ))

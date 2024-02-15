@@ -1,16 +1,17 @@
 ---
 import Badge from '@components/shared/Badge.astro'
+import Icon from '@components/Icon.astro'
 
 interface Badge {
   name: string
-  icon: any
+  icon: string
 }
 
 interface Props {
-  career: { title: string; subtitle: string; icon: any; description: string; badges?: Badge[] }
+  career: { title: string; subtitle: string; icon: string; description: string; badges?: Badge[] }
 }
 
-const { title, subtitle, icon: Icon, description, badges = [] } = Astro.props.career
+const { title, subtitle, icon, description, badges = [] } = Astro.props.career
 ---
 
 <div class="flex flex-col rounded border bg-white p-4 shadow-sm dark:bg-gray-300">
@@ -18,7 +19,7 @@ const { title, subtitle, icon: Icon, description, badges = [] } = Astro.props.ca
     <div
       class="flex h-10 w-10 flex-none items-center justify-center self-baseline rounded border border-blue-200 bg-blue-50 text-blue-500"
     >
-      <Icon class="h-6 w-6" />
+      <Icon icon={icon} class="h-6 w-6" />
     </div>
     <div>
       <div class="text-xl font-semibold text-gray-800">{title}</div>
@@ -29,9 +30,9 @@ const { title, subtitle, icon: Icon, description, badges = [] } = Astro.props.ca
   <p class="mb-5 mt-3.5 flex-grow font-light text-gray-500" set:html={description} />
   <div class="flex flex-wrap gap-1">
     {
-      badges.map(({ name, icon: Icon }) => (
+      badges.map(({ name, icon }) => (
         <Badge class="dark:border-gray-400 dark:bg-gray-300">
-          <Icon class="h3 w-3" />
+          <Icon icon={icon} class="h3 w-3" />
           {name}
         </Badge>
       ))

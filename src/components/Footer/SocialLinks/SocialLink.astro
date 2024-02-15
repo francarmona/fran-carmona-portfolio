@@ -4,20 +4,16 @@ interface Props {
   label: string
   hoverTextColor?: string
   darkHoverTextColor?: string
-  class?: string
 }
 
-const { url, class: className, label } = Astro.props
+const { url, label } = Astro.props
 ---
 
 <a
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class:list={[
-    'cursor-pointer text-gray-500 transition-colors duration-300 ease-in-out hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-300',
-    className
-  ]}
+  class="inline-flex cursor-pointer text-gray-500 transition-colors duration-300 ease-in-out hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-300"
 >
   <slot />
   <span class="sr-only">{label}</span>

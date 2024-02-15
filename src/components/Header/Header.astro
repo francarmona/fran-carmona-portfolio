@@ -1,7 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro'
-import ContactBubble from '@components/shared/icons/ContactBubble.astro'
-import FranCarmonaIcon from '@components/shared/icons/FranCarmonaIcon.astro'
+import Icon from '@components/Icon.astro'
 ---
 
 <header
@@ -9,7 +8,7 @@ import FranCarmonaIcon from '@components/shared/icons/FranCarmonaIcon.astro'
 >
   <div class="mx-auto flex max-w-screen-xl items-center justify-between py-3">
     <a href="/" class="flex items-center gap-2 text-blue-600 dark:text-white/85">
-      <FranCarmonaIcon class="h-7 w-7 sm:h-[35px] sm:w-[35px]" />
+      <Icon icon="logo" class="h-7 w-7 sm:h-[35px] sm:w-[35px]" />
       <span class="font-bold sm:text-xl">Fran Carmona</span>
     </a>
     <div class="sm-gap-4 flex items-center gap-2">
@@ -17,7 +16,7 @@ import FranCarmonaIcon from '@components/shared/icons/FranCarmonaIcon.astro'
         href="#contact"
         class="sm:py-1.7 inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-500 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 max-[370px]:hidden sm:px-4 sm:text-sm"
       >
-        <ContactBubble class="h-4 w-4 sm:h-5 sm:w-5" />
+        <Icon icon="contact" class="h-4 w-4 sm:h-5 sm:w-5" />
         Contact
       </a>
       <ThemeToggle />

@@ -1,5 +1,6 @@
 ---
 import Badge from '@components/shared/Badge.astro'
+import Icon from '@components/Icon.astro'
 import type { Project } from './Projects.astro'
 import ProjectImage from './ProjectImage.astro'
 
@@ -25,9 +26,9 @@ const {
   />
   <div class="mb-16 mt-5 flex flex-wrap gap-1">
     {
-      badges.map(({ name, icon: Icon }) => (
+      badges.map(({ name, icon }) => (
         <Badge>
-          <Icon class="h3 w-3" />
+          <Icon icon={icon} class="h3 w-3" />
           {name}
         </Badge>
       ))
