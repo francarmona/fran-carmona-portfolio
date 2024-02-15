@@ -1,11 +1,16 @@
 ---
+import { Image } from 'astro:assets'
+import type { Image as ProjectsImage } from './Projects.astro'
+
 interface Props {
-  class?: string
-  src: string
-  alt?: string
+  image: ProjectsImage
 }
 
-const { class: className, src, alt } = Astro.props
+const { image } = Astro.props
 ---
 
-<img class:list={['max-w-none rounded-t-md shadow-2xl', className]} src={src} alt={alt} />
+<Image
+  class:list={['max-w-none rounded-t-md shadow-2xl', image.class]}
+  src={image.src}
+  alt={image.alt}
+/>

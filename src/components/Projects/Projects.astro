@@ -4,12 +4,19 @@ import { ICONS_MAP } from '@components/shared/constants'
 import SectionTitle from '@components/shared/Section/SectionTitle.astro'
 import SectionDescription from '@components/shared/Section/SectionDescription.astro'
 import SectionBody from '@components/shared/Section/SectionBody.astro'
+import CarConfiguratorSeatImage from '@assets/images/car-configurator-seat.webp'
+import ClassroomImage from '@assets/images/classroom.webp'
+import MarfellPressImage from '@assets/images/marfeel-press.webp'
+import PlayerJourneyImage from '@assets/images/player-journey.webp'
+import PlaygamiConsoleImage from '@assets/images/playgami-console.webp'
+import SpecialToursAppsImage from '@assets/images/special-tours-apps.webp'
+import VisualEditorImage from '@assets/images/visual-editor.webp'
 import ProjectCard, { type Layout } from './ProjectCard.astro'
 
 export interface Image {
-  url: string
+  src: ImageMetadata
   class?: string
-  alt?: string
+  alt: string | null
 }
 
 export interface Project {
@@ -26,7 +33,7 @@ const PROJECTS: Project[] = [
   {
     title: 'Classroom',
     description: 'Ultimate tool for live chess instruction',
-    image: { url: './classroom.webp', class: 'w-[510px]', alt: 'Chessable classroom' },
+    image: { src: CarConfiguratorSeatImage, class: 'w-[510px]', alt: 'Chessable classroom' },
     company: 'Chessable',
     link: 'https://www.chessable.com/getclassroom/',
     layout: { class: 'bg-gradient-to-b from-[#0156b3] to-[#3595ff]' },
@@ -44,7 +51,7 @@ const PROJECTS: Project[] = [
     title: 'Cupra configurator',
     description: 'Vehicle customization platform for car shoppers',
     image: {
-      url: './car-configurator-seat.webp',
+      src: CarConfiguratorSeatImage,
       class: 'w-[555px]',
       alt: 'Cupra car configurator'
     },
@@ -66,7 +73,7 @@ const PROJECTS: Project[] = [
     title: 'Travel Apps',
     description: 'Smart travel apps for travel operators',
     image: {
-      url: './special-tours-apps.webp',
+      src: SpecialToursAppsImage,
       class: 'w-[480px] shadow-none',
       alt: 'Travel apps'
     },
@@ -81,7 +88,7 @@ const PROJECTS: Project[] = [
     title: 'Playgami console',
     description: 'SaaS platform for game publishers',
     image: {
-      url: './playgami-console.webp',
+      src: PlaygamiConsoleImage,
       class: 'w-[570px] border-l-[3px] border-[#090E1B]',
       alt: 'Playgami console'
     },
@@ -104,7 +111,7 @@ const PROJECTS: Project[] = [
     title: 'Player Journey',
     description: 'Channel orchestration tool for player communications',
     image: {
-      url: './player-journey.webp',
+      src: PlayerJourneyImage,
       class: 'w-[540px] shadow-none -mb-3',
       alt: 'Scopely Player Journey'
     },
@@ -127,7 +134,7 @@ const PROJECTS: Project[] = [
     title: 'Marfeel Press',
     description: 'Wordpress monetization plugin',
     image: {
-      url: './marfeel-press.webp',
+      src: MarfellPressImage,
       class: 'w-[480px] shadow-none',
       alt: 'Marfeel Press'
     },
@@ -142,7 +149,7 @@ const PROJECTS: Project[] = [
     title: 'In-app Visual Composer',
     description: 'Code-free in-app message editor',
     image: {
-      url: './visual-editor.webp',
+      src: VisualEditorImage,
       class: 'w-[480px]',
       alt: 'Playgami in-app visual editor'
     },
