@@ -8,15 +8,14 @@ interface Props {
 }
 
 const {
-  project: { title, description, company, badges = [], image, layout: { backgroundColor } = {} }
+  project: { title, description, company, badges = [], image, layout: { class: className } = {} }
 } = Astro.props
 ---
 
 <div
-  style={backgroundColor ? { backgroundColor } : undefined}
-  class="overflow-hidden rounded-lg border bg-white p-7 pb-0 shadow-sm dark:border-none"
+  class:list={['overflow-hidden rounded-lg border p-7 pb-0 shadow-sm dark:border-none', className]}
 >
-  <h3 class="pb-1 font-medium uppercase tracking-wider text-white/75">
+  <h3 class="pb-1 font-medium uppercase tracking-wider text-white/85">
     {title} -
     <span class="font-normal capitalize">{company}</span>
   </h3>
