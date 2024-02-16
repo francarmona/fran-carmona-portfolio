@@ -1,5 +1,4 @@
 ---
-import SpeedInsights from '@vercel/speed-insights/astro'
 import Header from '@components/Header/Header.astro'
 import Footer from '@components/Footer/Footer.astro'
 
@@ -8,8 +7,6 @@ interface Props {
 }
 
 const { title } = Astro.props
-
-console.log(`process.env: ${JSON.stringify(process.env.VERCEL_ANALYTICS_ID)}`)
 ---
 
 <!doctype html>
@@ -29,7 +26,6 @@ console.log(`process.env: ${JSON.stringify(process.env.VERCEL_ANALYTICS_ID)}`)
     </main>
     <Footer />
   </body>
-  <SpeedInsights />
 </html>
 <style is:global>
   html {
